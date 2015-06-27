@@ -10,6 +10,27 @@ import java.io.UnsupportedEncodingException;
  */
 public class Model {
 	public static void main(String args[]) throws FileNotFoundException, UnsupportedEncodingException{
+		//水池面积常量
+		final double SC01_AREA=35.76;
+		final double SC02_AREA=35.76;
+		final double SC03_AREA=71.52;
+		final double SC04_AREA=32.625;
+		final double SC05_AREA=32.625;
+		//管道管径常量
+		final double GD01_DIAM=1;
+		final double GD02_DIAM=1;
+		final double GD03_DIAM=1;
+		final double GD04_DIAM=0.8;
+		final double GD04a_DIAM=0.8;
+		final double GD05_DIAM=0.8;
+		final double GD05a_DIAM=0.8;
+		final double GD06_DIAM=0.8;
+		final double GD07_DIAM=0.8;
+		final double GD08_DIAM=0.8;
+		final double GD09_DIAM=0.8;
+		final double GD010_DIAM=0.8;
+		final double GD011_DIAM=0.8;
+		
 		final double  g=9.8;
 		int n=0;
 		double dt=1;
@@ -21,27 +42,27 @@ public class Model {
 		/*
 		 * 初始化水池对象
 		 */
-		SC MTG_QS_SC01 = new SC("MTG_QS_SC01",35.76,0);
-		SC MTG_QS_SC02 = new SC("MTG_QS_SC02",35.76,0);
-		SC MTG_QS_SC03 = new SC("MTG_QS_SC03",71.52,0);
-		SC MTG_QS_SC04 = new SC("MTG_QS_SC04",32.625,0);
-		SC MTG_QS_SC05 = new SC("MTG_QS_SC05",32.625,0);
+		SC MTG_QS_SC01 = new SC("MTG_QS_SC01",SC01_AREA,0);
+		SC MTG_QS_SC02 = new SC("MTG_QS_SC02",SC02_AREA,0);
+		SC MTG_QS_SC03 = new SC("MTG_QS_SC03",SC03_AREA,0);
+		SC MTG_QS_SC04 = new SC("MTG_QS_SC04",SC04_AREA,0);
+		SC MTG_QS_SC05 = new SC("MTG_QS_SC05",SC05_AREA,0);
 		/*
 		 * 初始化管道对象
 		 */
-		GD MTG_QS_GD01 = new GD("MTG_QS_GD01", 1, 6);
-		GD MTG_QS_GD02 = new GD("MTG_QS_GD02", 1, 6);
-		GD MTG_QS_GD03 = new GD("MTG_QS_GD03", 1, 0);
-		GD MTG_QS_GD04 = new GD("MTG_QS_GD04", 0.8, 0);
-		GD MTG_QS_GD04a = new GD("MTG_QS_GD04a", 0.8, 0);
-		GD MTG_QS_GD05 = new GD("MTG_QS_GD05", 0.8, 0);
-		GD MTG_QS_GD05a = new GD("MTG_QS_GD05a", 0.8, 0);
-		GD MTG_QS_GD06 = new GD("MTG_QS_GD06", 0.8, 0);
-		GD MTG_QS_GD07 = new GD("MTG_QS_GD07", 0.8, 0);
-		GD MTG_QS_GD08 = new GD("MTG_QS_GD08", 0.8, 0);
-		GD MTG_QS_GD09 = new GD("MTG_QS_GD09", 0.8, 0);
-		GD MTG_QS_GD10 = new GD("MTG_QS_GD010", 0.8, 0);
-		GD MTG_QS_GD11 = new GD("MTG_QS_GD011", 0.8, 0);
+		GD MTG_QS_GD01 = new GD("MTG_QS_GD01", GD01_DIAM, 6);
+		GD MTG_QS_GD02 = new GD("MTG_QS_GD02", GD02_DIAM, 6);
+		GD MTG_QS_GD03 = new GD("MTG_QS_GD03", GD03_DIAM, 0);
+		GD MTG_QS_GD04 = new GD("MTG_QS_GD04", GD04_DIAM, 0);
+		GD MTG_QS_GD04a = new GD("MTG_QS_GD04a",GD04a_DIAM, 0);
+		GD MTG_QS_GD05 = new GD("MTG_QS_GD05", GD05_DIAM, 0);
+		GD MTG_QS_GD05a = new GD("MTG_QS_GD05a", GD05a_DIAM, 0);
+		GD MTG_QS_GD06 = new GD("MTG_QS_GD06",GD06_DIAM, 0);
+		GD MTG_QS_GD07 = new GD("MTG_QS_GD07", GD07_DIAM, 0);
+		GD MTG_QS_GD08 = new GD("MTG_QS_GD08", GD08_DIAM, 0);
+		GD MTG_QS_GD09 = new GD("MTG_QS_GD09",GD09_DIAM, 0);
+		GD MTG_QS_GD10 = new GD("MTG_QS_GD010",GD010_DIAM, 0);
+		GD MTG_QS_GD11 = new GD("MTG_QS_GD011", GD011_DIAM, 0);
 		/*
 		 * 初始化阀门对象
 		 */
@@ -106,7 +127,7 @@ public class Model {
 			/**
 			 * 管道09
 			 */
-			MTG_QS_GD09.setSpeed(MTG_QS_GD09.getSpeed()*MTG_QS_FM04.getOnoff());//流速
+			MTG_QS_GD09.setSpeed(MTG_QS_GD07.getSpeed()*MTG_QS_FM04.getOnoff());//流速
 			//n=1
 			/**
 			 * 水池03
